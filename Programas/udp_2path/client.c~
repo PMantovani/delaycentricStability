@@ -1,0 +1,252 @@
+#include <arpa/inet.h>
+#include <netinet/in.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/time.h>
+#include <math.h>
+#include <signal.h>
+#include <errno.h>
+
+#define	PLENGHT	    1250
+#define RTOALPHA    0.125
+#define MAX_LIMIT   100
+#define PORT        34543
+#define HISTERESIS  10000
+#define HBINTERVAL  5
+
+char *file_name;
+
+int sock;
+struct sockaddr_in server[2];
+unsigned int slen = sizeof(server[0]);
+
+int activepath[MAX_LIMIT];
+int path[MAX_LIMIT];
+float rtt[2][MAX_LIMIT];
+
+long unsigned int count_send = 0;
+long unsigned int count_recv = 0;
+
+void erro(char *s)
+{
+	perror(s);
+	exit(1);
+}
+
+void print(char *filename)
+{
+    FILE *file_log;
+    long unsigned int count;
+    long unsigned int lost = 0;
+    long unsigned int pathacum = 0;
+    long unsigned int pathreccount[2];
+                      pathreccount[0] = 0;
+                      pathreccount[1] = 0;
+    float rttacum[2];
+          rttacum[0]=0;
+          rttacum[1]=0;
+
+    file_log = fopen(filename, "w");
+    if (file_log == NULL)
+        erro("fopen");
+
+    for(count=0; count<count_send; count++) {
+        if(rtt[path[count]][count] == 0) {
+            lost++;
+        }
+        else {
+            rttacum[path[count]] += rtt[path[count]][count];
+            pathreccount[path[count]]++;
+        }
+        pathacum += (1-activepath[count]);
+
+        fprintf(file_log, "%d; %d; %.0f\n", activepath[count], path[count], rtt[path[count]][count]);
+    }
+
+    fclose(file_log);
+
+    printf("\n------------------------------------\n");
+    printf("Atraso Medio Caminho 1: %.2f us\n", rttacum[0]/pathreccount[0]);
+    printf("Atraso Medio Caminho 2: %.2f us\n", rttacum[1]/pathreccount[1]);
+    printf("Caminho 1 como Principal em: %.2f%% (%lu / %lu)\n", 100*(float)pathacum/(float)count_send, pathacum, count_send);
+    printf("Pacotes Perdidos: %.2f%% (%lu / %lu)\n", 100*(float)lost/(float)count_send, lost, count_send);
+    printf("-----------------------------------------\n\n");
+    fflush(stdout);
+    return;
+}
+
+void handler(int param)
+{
+    close(sock);
+
+    print(file_name);
+
+    exit(1);
+}
+
+void initialize(char **argv)
+{
+    int count;
+
+    activepath[0] = 0;
+    for (count=0; count<MAX_LIMIT; count++)
+    {
+        rtt[0][count] = 0;
+        rtt[1][count] = 0;
+    }
+
+    if ((sock=socket(PF_INET, SOCK_DGRAM | SOCK_NONBLOCK, 0)) == -1)
+		erro("socket");
+
+	for (count=0; count<2; count++) {
+        memset((char *) &server[count], 0, slen);
+        server[count].sin_family = AF_INET;
+        server[count].sin_port = htons(PORT);
+	}
+
+	if (inet_aton(argv[1], &server[0].sin_addr)==0) {
+        fprintf(stderr, "inet_aton() failed\n");
+        exit(1);
+	}
+
+	if (inet_aton(argv[2], &server[1].sin_addr)==0) {
+        fprintf(stderr, "inet_aton() failed\n");
+        exit(1);
+	}
+
+	return;
+}
+
+float usec_diff (struct timeval pos, struct timeval neg)
+{
+    return (1000000*(pos.tv_sec-neg.tv_sec) + (pos.tv_usec-neg.tv_usec));
+}
+
+void send_func (int pathtosend, struct timeval* sendtime, struct sockaddr_in addrtosend)
+{
+    char msg[PLENGHT-66];
+
+    sprintf(msg, "#%d#%lu", pathtosend, count_send);
+    path[count_send] = pathtosend;
+    gettimeofday(sendtime, NULL);
+    sendto(sock, msg, PLENGHT-62, 0, (struct sockaddr *)&addrtosend, slen);
+
+    return;
+}
+
+int main(int argc, char* argv[])
+{
+    float SINTERVAL;
+    float srtt[2];
+            srtt[0] = 1000000;
+            srtt[1] = 1000000;
+    struct timeval select_timeout, start, end;
+    struct timeval sendtime[MAX_LIMIT];
+    fd_set readfds;
+    int ret;
+    int first_recv[2];
+        first_recv[0] = 1;
+        first_recv[1] = 1;
+
+    if (argc != 5) {
+        fprintf(stderr, "usage: %s <ip address 1> <ip address 2> <CSV file> <bandwidth (kbps)>\n\n", argv[0]);
+        exit(1);
+    }
+
+    file_name = argv[3];
+
+    signal(SIGINT, handler);
+
+    SINTERVAL = ((double)8000UL*(double)PLENGHT/(double)atoi(argv[4]))
+                + ((double)8000UL*(double)PLENGHT/(double)atoi(argv[4]))/HBINTERVAL;
+
+    initialize(argv);
+
+    FD_ZERO(&readfds);      // Initialize Select() Settings
+    FD_SET(sock, &readfds);
+
+    while(count_recv < MAX_LIMIT) {
+
+        select_timeout.tv_sec = (int)SINTERVAL/1000000;     // Calculate Select() Timeout based on SINTERVAL
+        select_timeout.tv_usec = SINTERVAL - select_timeout.tv_sec;
+
+        if(count_send < MAX_LIMIT) {    // Send Packet
+            send_func(activepath[count_send], &sendtime[count_send], server[activepath[count_send]]); // Send Packet
+            count_send++;
+            activepath[count_send] = activepath[count_send-1];
+        }
+
+        if (((count_send % HBINTERVAL) == 0) && (count_send < MAX_LIMIT)) {      // Send Heartbeat each 5 packets
+            int hbpath;
+
+            if (activepath[count_send])
+                hbpath = 0;
+            else hbpath = 1;
+
+            send_func(hbpath, &sendtime[count_send], server[hbpath]);
+
+            count_send++;
+            activepath[count_send] = activepath[count_send-1];
+        }
+
+        gettimeofday(&start, NULL);
+
+        do {
+            ret = select(sock+1, &readfds, NULL, NULL, &select_timeout);
+
+            if (ret == -1)      // Select() Error
+                erro("select()");
+
+            if (ret == 0) {     // Select() Timeout, sending new packet
+                select_timeout.tv_sec = 0;
+                select_timeout.tv_usec = 0;
+            }
+
+            else {      // Packet to receive
+                struct timeval recvtime;
+                int recvpath;
+                int recvmsg;
+                char msg[PLENGHT-66];
+
+                recvfrom(sock, msg, PLENGHT-66, 0, NULL, &slen);
+
+                gettimeofday(&recvtime, NULL);
+
+                sscanf(msg, "#%d#%d", &recvpath, &recvmsg);
+
+                rtt[recvpath][recvmsg] = usec_diff(recvtime, sendtime[recvmsg]);
+                if (first_recv[recvpath]) {     // First SRTT Calculus
+                    srtt[recvpath] = rtt[recvpath][recvmsg];
+                    first_recv[recvpath] = 0;
+                }
+                else    // Other SRTT Calculus
+                    srtt[recvpath] = RTOALPHA*rtt[recvpath][recvmsg] + (1-RTOALPHA)*srtt[recvpath];
+
+                if (srtt[0] >= srtt[1] + HISTERESIS)    // Path Change, uses HISTERESIS to avoid multiple path changes
+                    activepath[count_send] = 1;
+                else if (srtt[1] >= srtt[0] + HISTERESIS)
+                    activepath[count_send] = 0;
+
+                count_recv++;
+            }
+
+            gettimeofday(&end, NULL);
+            float diff = usec_diff(end, start);
+            select_timeout.tv_sec = select_timeout.tv_sec - (int)diff/1000000;          // Calculate New Select() Timeout
+            select_timeout.tv_usec = select_timeout.tv_usec - ((int)diff % 1000000);    // If < 0, send new packet
+
+            FD_ZERO(&readfds);      // Initialize Select() Settings
+            FD_SET(sock, &readfds);
+
+        } while ((select_timeout.tv_sec >= 0) && (select_timeout.tv_usec >= 0));
+    }
+
+    close(sock);
+    print(argv[3]);
+
+    return;
+}

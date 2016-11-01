@@ -1,0 +1,324 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  14 MAY 2015 23:24
+entering extended mode
+**sbrt15.tex
+
+("C:\Users\Pedro\Dropbox\Iniciacao\Documentação\Artigo SBRT\Versão 5\sbrt15.
+tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+
+("C:\Users\Pedro\Dropbox\Iniciacao\Documentação\Artigo SBRT\Versão 5\sbrt201
+5.cls"
+
+LaTeX Warning: You have requested document class `sbrt2015',
+               but the document class provides `IEEEtran'.
+
+Document Class: IEEEtran 2002/08/13 revision V1.6 by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- The source comments contain changelog notes.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count79
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count80
+\rotFPtop=\skip41
+\rotFPbot=\skip42
+\rot@float@box=\box26
+\rot@mess@toks=\toks17
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\epsf\epsf.tex"
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen104
+\epsfframethickness=\dimen105
+\epsfrsize=\dimen106
+\epsftmp=\dimen107
+\epsftsize=\dimen108
+\epsfxsize=\dimen109
+\epsfysize=\dimen110
+\pspoints=\dimen111
+)
+\c@theorem=\count81
+\@IEEEtrantmpdimenA=\dimen112
+\@IEEEtrantmpdimenB=\dimen113
+\@IEEEtrantmpcountA=\count82
+\@IEEEtrantmpcountB=\count83
+\@IEEEtrantmptoksA=\toks18
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 107.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- This is a 10 point document.
+\normalsizebaselineskip=\skip52
+\normaljot=\skip53
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 405.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 405.
+\IEEEilabelindentA=\dimen114
+\IEEEilabelindentB=\dimen115
+\IEEEilabelindent=\dimen116
+\IEEEelabelindent=\dimen117
+\IEEEdlabelindent=\dimen118
+\labelindent=\dimen119
+\IEEEiednormlabelsep=\dimen120
+\IEEEiedmathlabelsep=\dimen121
+\IEEEiedtopsep=\skip54
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@IEEEsubequation=\count88
+\abovecaptionskip=\skip55
+\belowcaptionskip=\skip56
+\c@figure=\count89
+\c@table=\count90
+\@IEEEeqnnumcols=\count91
+\@IEEEeqncolcnt=\count92
+\@IEEEtmpitemindent=\dimen122
+\c@biography=\count93
+\@IEEEtranrubishbin=\box27
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks19
+)
+("C:\Users\Pedro\Dropbox\Iniciacao\Documentação\Artigo SBRT\Versão 5\sbrt15.
+aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count94
+\scratchdimen=\dimen123
+\scratchbox=\box28
+\nofMPsegments=\count95
+\nofMParguments=\count96
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count97
+\MPscratchDim=\dimen124
+\MPnumerator=\count98
+\makeMPintoPDFobject=\count99
+\everyMPtoPDFconversion=\toks21
+)
+** ATTENTION: Overriding command lockouts (line 8).
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 51.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 51.
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 76--78
+[]\OT1/ptm/m/n/10 In this pa-per, we use a mod-i-fied ver-sion of
+ []
+
+
+Underfull \hbox (badness 5756) in paragraph at lines 76--78
+\OT1/ptm/m/n/10 pre-dic-tive delay-centric. We re-place con-di-tion (i) by:
+ []
+
+<figura1.pdf, id=15, 650.69301pt x 217.65079pt>
+File: figura1.pdf Graphic file (type pdf)
+ <use figura1.pdf>
+Package pdftex.def Info: figura1.pdf used on input line 87.
+(pdftex.def)             Requested size: 250.38354pt x 85.35837pt.
+ [2 <C:/Users/Pedro/Dropbox/Iniciacao/Documentação/Artigo SBRT/Versão 5/figu
+ra1.pdf>]
+<figura2.pdf, id=27, 1371.1225pt x 654.445pt>
+File: figura2.pdf Graphic file (type pdf)
+ <use figura2.pdf>
+Package pdftex.def Info: figura2.pdf used on input line 123.
+(pdftex.def)             Requested size: 250.36899pt x 128.03067pt.
+
+<figura6.pdf, id=28, 1371.1225pt x 654.445pt>
+File: figura6.pdf Graphic file (type pdf)
+ <use figura6.pdf>
+Package pdftex.def Info: figura6.pdf used on input line 143.
+(pdftex.def)             Requested size: 250.36899pt x 122.33865pt.
+
+<figura7.pdf, id=29, 1371.1225pt x 654.445pt>
+File: figura7.pdf Graphic file (type pdf)
+ <use figura7.pdf>
+Package pdftex.def Info: figura7.pdf used on input line 158.
+(pdftex.def)             Requested size: 250.36899pt x 122.33865pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figura8.pdf, id=30, 1371.1225pt x 654.445pt>
+File: figura8.pdf Graphic file (type pdf)
+ <use figura8.pdf>
+Package pdftex.def Info: figura8.pdf used on input line 172.
+(pdftex.def)             Requested size: 250.36899pt x 122.33865pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <C:/Users/Pedro/Dropbox/Iniciacao/Documentação/Artigo SBRT/Versão 5/figur
+a2.pdf> <C:/Users/Pedro/Dropbox/Iniciacao/Documentação/Artigo SBRT/Versão 5/
+figura6.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Pedro/Dropbox/Iniciacao/Documentaç
+ão/Artigo SBRT/Versão 5/figura6.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
+>] <figura9.pdf, id=47, 1371.1225pt x 654.445pt>
+File: figura9.pdf Graphic file (type pdf)
+ <use figura9.pdf>
+Package pdftex.def Info: figura9.pdf used on input line 184.
+(pdftex.def)             Requested size: 250.36899pt x 122.33865pt.
+
+("C:\Users\Pedro\Dropbox\Iniciacao\Documentação\Artigo SBRT\Versão 5\sbrt15.
+bbl" [4 <C:/Users/Pedro/Dropbox/Iniciacao/Documentação/Artigo SBRT/Versão 5/
+figura7.pdf> <C:/Users/Pedro/Dropbox/Iniciacao/Documentação/Artigo SBRT/Vers�
+�o 5/figura8.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Pedro/Dropbox/Iniciacao/Documentaç
+ão/Artigo SBRT/Versão 5/figura8.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
+> <C:/Users/Pedro/Dropbox/Iniciacao/Documentação/Artigo SBRT/Versão 5/figura
+9.pdf
+
+pdfTeX warning: pdflatex.exe (file C:/Users/Pedro/Dropbox/Iniciacao/Documentaç
+ão/Artigo SBRT/Versão 5/figura9.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
+>]) [5
+
+]
+("C:\Users\Pedro\Dropbox\Iniciacao\Documentação\Artigo SBRT\Versão 5\sbrt15.
+aux") ) 
+Here is how much of TeX's memory you used:
+ 2102 strings out of 493921
+ 31294 string characters out of 3144876
+ 90954 words of memory out of 3000000
+ 5402 multiletter control sequences out of 15000+200000
+ 34143 words of font info for 63 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 41i,6n,45p,1005b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on sbrt15.pdf (5 pages, 320359 bytes).
+PDF statistics:
+ 108 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+
